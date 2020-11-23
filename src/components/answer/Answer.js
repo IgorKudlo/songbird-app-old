@@ -1,28 +1,21 @@
 import React from 'react'
 
-const Answer = () => {
+const Answer = ({ birdsData }) => {
+  const birdsName = birdsData ? (
+    birdsData.map(bird => {
+      return (
+        <li className="list-group-item">
+          <span className="li-btn"></span>{bird.name}
+        </li>
+      )
+    })
+  ) : 'Loading ...'
+
   return (
     <div className="row mb2">
       <div className="col-md-6">
         <ul className="item-list list-group">
-          <li className="list-group-item">
-            <span className="li-btn"></span>Ворон
-          </li>
-          <li className="list-group-item">
-            <span className="li-btn"></span>Журавль
-          </li>
-          <li className="list-group-item">
-            <span className="li-btn"></span>Ласточка
-          </li>
-          <li className="list-group-item">
-            <span className="li-btn"></span>Козодой
-          </li>
-          <li className="list-group-item">
-            <span className="li-btn"></span>Кукушка
-          </li>
-          <li className="list-group-item">
-            <span className="li-btn"></span>Синица
-          </li>
+          {birdsName}
         </ul>
       </div>
       <div className="col-md-6">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Header from './components/header/Header'
 import GameOver from './components/gameOver/GameOver'
 import Question from "./components/question/Question";
@@ -7,18 +7,26 @@ import Answer from './components/answer/Answer'
 import './bootstrap.min.css'
 import './App.css'
 
-const birds = fetch('https://birds-app-779ec.firebaseio.com/birds.json')
-  .then(response => response.json())
-  .then(json => json)
-  .catch(error => console.log(error))
-
 function App() {
+
+  const [birds, setBirds] = useState([]);
+
+  useEffect(() => {
+    fetch('https://birds-app-779ec.firebaseio.com/birds.json')
+      .then(response => response.json())
+      .then(json => setBirds(json))
+
+  }, [])
+
   return (
     <div className="container">
+      {/*{
+        birds.length > 0 ? birds[0].map(bird => <p>{bird.name}</p>) : null
+      }*/}
       <Header />
       <GameOver />
       <Question />
-      <Answer />
+      <Answer birdsData={birds[0]} />
       <button className="btn">Next Level</button>
     </div>
   );
