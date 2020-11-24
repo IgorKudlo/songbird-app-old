@@ -1,33 +1,24 @@
-import React, {useState, useEffect} from 'react'
-import Header from './components/header/Header'
-import GameOver from './components/gameOver/GameOver'
-import Question from "./components/question/Question"
-import Answer from './components/answer/Answer'
+import React from 'react'
+import {BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
 import './App.scss'
+import {Home} from './pages/Home'
+import {About} from './pages/About'
+import {Quiz} from './pages/Quiz'
+import {Navigation} from "./components/Navigation";
 
 function App() {
-
-  const [birds, setBirds] = useState([]);
-
-  useEffect(() => {
-    fetch('https://birds-app-779ec.firebaseio.com/birds.json')
-      .then(response => response.json())
-      .then(json => setBirds(json))
-
-  }, [])
-
   return (
-    <div className="container">
-      {/*{
-        birds.length > 0 ? birds[0].map(bird => <p>{bird.name}</p>) : null
-      }*/}
-      <Header />
-      <GameOver />
-      <Question />
-      <Answer birdsData={birds[0]} />
-      <button className="btn">Next Level</button>
-    </div>
-  );
+    <Router>
+      <div className="container">
+        <Navigation />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/quiz" component={Quiz} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </div>
+    </Router>
+  )
 }
 
 export default App;

@@ -38,6 +38,19 @@ body {
   background-color: #00efb2
 }
 
+.nav-link {
+  color: #fff;
+
+  &.active {
+    color: #28a745;
+  }
+}
+
+.jumbotron {
+  border: 1px solid #444;
+  background-color: #303030;
+}
+
 .header {
   margin-top: .5rem;
   flex-direction: column
