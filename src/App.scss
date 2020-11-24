@@ -1,10 +1,17 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  color: #fff;
+  background-color: #222;
+}
+
 .row.mb2 {
   position: relative
 }
 
 .btn {
   width: 100%;
-  margin: 25px 15px;
+  margin: 25px 0;
   background-color: #303030;
   border: 1px solid #444;
   color: #fff !important;
@@ -57,7 +64,8 @@
 
 .page-item .page-link {
   background-color: #008966;
-  border-color: #007c5d
+  border-color: #007c5d;
+  color: #fff;
 }
 
 .page-item.active .page-link {
@@ -71,14 +79,6 @@
   justify-content: space-between
 }
 
-.header .logo {
-  background-image: url('logo.svg');
-  width: 200px;
-  height: 55px;
-  background-size: contain;
-  background-repeat: no-repeat
-}
-
 .score {
   line-height: 55px
 }
@@ -86,7 +86,8 @@
 .random-bird {
   display: flex;
   padding: 1rem;
-  margin-bottom: 25px
+  margin-bottom: 25px;
+  background-color: #303030;
 }
 
 .random-bird .bird-image {
@@ -102,11 +103,16 @@
 }
 
 .random-bird .list-group {
-  margin-left: 40px
+  margin-left: 40px;
 }
 
 .random-bird .list-group-item {
-  padding: .25rem
+  padding: .25rem;
+}
+
+.list-group-item {
+  background-color: #303030;
+  border: 1px solid #555;
 }
 
 @media (max-width:570px) {
@@ -242,7 +248,8 @@
   display: flex;
   padding: 1rem;
   border: 1px solid #444;
-  width: 100%
+  width: 100%;
+  background-color: #303030;
 }
 
 .bird-details .bird-image {

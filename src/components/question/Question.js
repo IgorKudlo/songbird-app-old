@@ -1,9 +1,10 @@
 import React from 'react'
+import cover from '../../cover.jpg'
 
 const Question = () => {
   return (
     <div className="random-bird jumbotron rounded">
-      <img className="bird-image" src="media/bird.jpg" alt="bird" />
+      <img className="bird-image" src={cover} alt="bird" />
       <div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">

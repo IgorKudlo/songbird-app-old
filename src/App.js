@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import Header from './components/header/Header'
 import GameOver from './components/gameOver/GameOver'
-import Question from "./components/question/Question";
+import Question from "./components/question/Question"
 import Answer from './components/answer/Answer'
-
-import './bootstrap.min.css'
-import './App.css'
+import './App.scss'
 
 function App() {
 
